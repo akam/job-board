@@ -9,9 +9,9 @@ function Navbar(){
                     </span>
                 <div className='md:ml-auto'>
                     <div className='flex space-x-2'>
-                        <button className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Home</button>
-                        <button className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Jobs</button>
-                        <button className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Add Job</button>
+                        <a href='/home' className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Home</a>
+                        <a href='/jobs' className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Jobs</a>
+                        <a href='/addjob' className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Add Job</a>
                     </div>
                 </div>
                 </div>

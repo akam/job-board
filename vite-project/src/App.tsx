@@ -1,17 +1,19 @@
 import Navbar from './components/Navbar.tsx'
 import Hero from './components/Hero.tsx'
 import HomeCards from './components/HomeCards.tsx'
+import JobListings from './components/JobListings.tsx'
+import ViewAllJobs from './components/ViewAllJobs.tsx'
+
 
 function App() {
 
   return (
     <>
       <Navbar />
-      <Hero 
-        title='Become a React Dev'
-        subtitle='Find the React job that fits your skill set'
-      />
+      <Hero/>
       <HomeCards/>
+      <JobListings/>
+      <ViewAllJobs/>
     </>
   )
 }

@@ -1,12 +1,12 @@
-interface cardProps {
-    title: string
-    description: string
-    buttonText: string
-    bg?: string
+interface CardProps {
+    title: string;
+    description: string;
+    buttonText: string;
+    bg?: string;
 }
 
-function Card (props: cardProps){
-    
+function Card (props: CardProps){
+
     const backgroundColor = props.bg ? props.bg : 'bg-gray-100';
 
     return (
