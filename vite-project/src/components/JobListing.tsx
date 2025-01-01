@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 interface CompanyProps {
     name: string;
     description: string;
@@ -18,6 +20,17 @@ interface JobProps {
 }
 
 function JobListing({ job }: JobProps) {
+    const [showFullDescription, setShowFullDescription] = useState(false)
+    let description = job.description
+     
+    if(!showFullDescription){
+        description = description.substring(0,90) + '...';
+    }
+
+    function handleClick(){
+        setShowFullDescription(!showFullDescription)
+    }
+
     return (
         <div className='bg-white rounded-xl shadow-md relative'>
         <div className='p-4'>
@@ -26,12 +39,13 @@ function JobListing({ job }: JobProps) {
             <h3 className='text-xl font-bold'>{job.title}</h3>
           </div>
   
-          <div className='mb-5'>{job.description}</div>
+          <div className='mb-5'>{description}</div>
   
           <button
+            onClick={handleClick}
             className='text-indigo-500 mb-5 hover:text-indigo-600'
           >
-            More
+            {showFullDescription ? 'Less' : 'More'}
           </button>
   
           <h3 className='text-indigo-500 mb-2'>{job.salary} / Year</h3>

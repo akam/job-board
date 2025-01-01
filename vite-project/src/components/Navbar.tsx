@@ -1,4 +1,11 @@
+import { useState } from 'react';
+
 function Navbar(){
+    const [selected, setSelected] = useState('home')
+    function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+        e.preventDefault()
+        setSelected((e.target as HTMLAnchorElement).id)
+    }
     return (
         <nav className='bg-indigo-700 border-b border-indigo-500'>
             <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
@@ -9,9 +16,27 @@ function Navbar(){
                     </span>
                 <div className='md:ml-auto'>
                     <div className='flex space-x-2'>
-                        <a href='/home' className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Home</a>
-                        <a href='/jobs' className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Jobs</a>
-                        <a href='/addjob' className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>Add Job</a>
+                        <a 
+                        id='home' 
+                        onClick={handleClick} 
+                        href='/home' 
+                        className={`text-white ${selected === 'home' ? 'bg-black' : 'bg-indigo-700'} hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
+                            Home
+                        </a>
+                        <a 
+                        id='jobs' 
+                        onClick={handleClick} 
+                        href='/jobs' 
+                        className={`text-white ${selected === 'jobs' ? 'bg-black' : 'bg-indigo-700'} hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
+                            Jobs
+                        </a>
+                        <a 
+                        id='addJob' 
+                        onClick={handleClick} 
+                        href='/addJob' 
+                        className={`text-white ${selected === 'addJob' ? 'bg-black' : 'bg-indigo-700'} hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
+                            Add Job
+                        </a>
                     </div>
                 </div>
                 </div>
