@@ -8,7 +8,7 @@ function HomePage() {
         <div>
             <Hero/>
             <HomeCards/>
-            <JobListings/>
+            <JobListings isHome={false}/>
             <ViewAllJobs/>
         </div>
     )

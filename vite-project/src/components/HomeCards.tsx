@@ -1,4 +1,4 @@
-import Card from './Card.tsx'
+import Card from './Card.tsx';
 
 function HomeCards(){
     return (
@@ -10,11 +10,13 @@ function HomeCards(){
                     title='Developers'
                     description='Browse our React jobs and start your career today'
                     buttonText='Browse Jobs'
+                    path='/jobs'
                 />
                 <Card 
                     title='Employers'
                     description='List your job to find the perfect developer for the role'
                     buttonText='Add Job'
+                    path='/add-jobs'
                     bg='bg-indigo-100'/>
                 </div>
             </div>

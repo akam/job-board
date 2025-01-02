@@ -1,12 +1,15 @@
-import { useState } from 'react';;
+// import { useState, useEffect } from 'react';;
 import { FaReact } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-function Navbar(){
-    const [selected, setSelected] = useState('home')
-    function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
-        setSelected((e.target as HTMLAnchorElement).id)
-    }
+function Navbar() {
+
+    const linkClass = ({isActive}: {isActive: boolean}) => (
+        isActive 
+            ? 'text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
+            : 'text-white bg-indigo-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
+    )
+
     return (
         <nav className='bg-indigo-700 border-b border-indigo-500'>
             <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
@@ -18,27 +21,24 @@ function Navbar(){
                     </span>
                 <div className='md:ml-auto'>
                     <div className='flex space-x-2'>
-                        <Link 
+                        <NavLink 
                         id='home' 
-                        onClick={handleClick} 
                         to='/' 
-                        className={`text-white ${selected === 'home' ? 'bg-black' : 'bg-indigo-700'} hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
+                        className={linkClass}>
                             Home
-                        </Link>
-                        <Link 
+                        </NavLink>
+                        <NavLink 
                         id='jobs' 
-                        onClick={handleClick} 
                         to='/jobs' 
-                        className={`text-white ${selected === 'jobs' ? 'bg-black' : 'bg-indigo-700'} hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
+                        className={linkClass}>
                             Jobs
-                        </Link>
-                        <Link 
-                        id='add-job' 
-                        onClick={handleClick} 
-                        to='/addJob' 
-                        className={`text-white ${selected === 'addJob' ? 'bg-black' : 'bg-indigo-700'} hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
+                        </NavLink>
+                        <NavLink 
+                        id='add-job'
+                        to='/addJob'    
+                        className={linkClass}>
                             Add Job
-                        </Link>
+                        </NavLink>
                     </div>
                 </div>
                 </div>

@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
+
 interface CardProps {
     title: string;
     description: string;
+    path: string;
     buttonText: string;
     bg?: string;
 }
@@ -17,11 +20,12 @@ function Card (props: CardProps){
             <p className='mt-2 mb-4'>
                 {props.description}
             </p>
-            <button
-              className='inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700'
+            <Link
+                to={props.path}
+                className='inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700'
             >
                 {props.buttonText}
-            </button>
+            </Link>
         </div>)
   };
   
