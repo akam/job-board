@@ -1,5 +1,5 @@
-const jobs = {
-    "jobs": [
+{
+  "jobs": [
       {
         "id": "1",
         "title": "Senior React Developer",
@@ -86,7 +86,3 @@ const jobs = {
       }
     ]
   }
-
-export const getAllJobs = () => { 
-    return Object.values(jobs).flat()
-}

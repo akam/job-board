@@ -9,7 +9,7 @@ interface CompanyProps {
     contactPhone: string;
 }
 
-interface JobProps {
+export interface JobProps {
     job: {
         id: string;
         title: string;
@@ -21,7 +21,7 @@ interface JobProps {
     };
 }
 
-function JobListing({ job }: JobProps) {
+export function JobListing({ job }: JobProps) {
     const [showFullDescription, setShowFullDescription] = useState(false)
     let description = job.description
      
@@ -71,5 +71,3 @@ function JobListing({ job }: JobProps) {
         
     )
 }
-
-export default JobListing;
