@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { FaReact } from 'react-icons/fa'
+import { useState } from 'react';;
+import { FaReact } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Navbar(){
     const [selected, setSelected] = useState('home')
     function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
-        e.preventDefault()
         setSelected((e.target as HTMLAnchorElement).id)
     }
     return (
@@ -18,27 +18,27 @@ function Navbar(){
                     </span>
                 <div className='md:ml-auto'>
                     <div className='flex space-x-2'>
-                        <a 
+                        <Link 
                         id='home' 
                         onClick={handleClick} 
-                        href='/home' 
+                        to='/' 
                         className={`text-white ${selected === 'home' ? 'bg-black' : 'bg-indigo-700'} hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
                             Home
-                        </a>
-                        <a 
+                        </Link>
+                        <Link 
                         id='jobs' 
                         onClick={handleClick} 
-                        href='/jobs' 
+                        to='/jobs' 
                         className={`text-white ${selected === 'jobs' ? 'bg-black' : 'bg-indigo-700'} hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
                             Jobs
-                        </a>
-                        <a 
-                        id='addJob' 
+                        </Link>
+                        <Link 
+                        id='add-job' 
                         onClick={handleClick} 
-                        href='/addJob' 
+                        to='/addJob' 
                         className={`text-white ${selected === 'addJob' ? 'bg-black' : 'bg-indigo-700'} hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}>
                             Add Job
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 </div>
