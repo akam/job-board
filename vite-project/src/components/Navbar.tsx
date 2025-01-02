@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaReact } from 'react-icons/fa'
 
 function Navbar(){
     const [selected, setSelected] = useState('home')
@@ -12,6 +13,7 @@ function Navbar(){
             <div className='flex h-20 items-center justify-between'>
                 <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-start'>
                     <span className='md:block pr-5 text-white text-2xl font-bold ml-2'>
+                    <FaReact className='inline mb-2 mr-2 text-blue-500 bg-white rounded-full size-8 p-1 ring ring-blue-500 ring-offset-0'/>
                     React Jobs
                     </span>
                 <div className='md:ml-auto'>
